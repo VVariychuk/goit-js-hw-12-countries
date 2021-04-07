@@ -1,6 +1,6 @@
 import './styles.css';
 import API from './js/fetchCountries';
-import countriesTpl from './templates/countries.hbs';
+import countriesTpl from './templates/countryes.hbs';
 import searchlistTpl from './templates/searchlist.hbs';
 import getRefs from './js/getRefs';
 import debounce from 'lodash.debounce';
@@ -30,7 +30,6 @@ function onPNotifyError() {
 }
 
 function renderSearch(response) {
-    console.log();
     if (response.length >= 6) {
         console.log(
           '%c Too many countries found. Please enter a more specific query',
@@ -51,12 +50,12 @@ function renderSearch(response) {
     
  }
 
-function renderCountrie(coutrie) {
-    const markup = countriesTpl(coutrie)    
+function renderCountrie(coutry) {
+    const markup = countriesTpl(coutry)    
     refs.cardContainer.innerHTML = markup
 }
  
-function renderSearchList(countries) {
-    const markup = searchlistTpl(countries)
+function renderSearchList(countryes) {
+    const markup = searchlistTpl(countryes)
     refs.cardContainer.innerHTML = markup
 }
